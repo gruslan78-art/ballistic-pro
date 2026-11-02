@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1116"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png">
+<title>BALLISTIC PRO</title><link rel="stylesheet" href="style.css">
+</head>
+<body><header><div><small>ПЕРСОНАЛЬНАЯ ПЛАТФОРМА</small><h1>BALLISTIC <em>PRO</em></h1></div><span class="status"></span></header>
+<nav id="tabs"><button class="active" data-tab="home">Обзор</button><button data-tab="gear">Оборудование</button><button data-tab="journal">Журнал</button><button data-tab="measure">Измерения</button></nav>
+<main>
+<section id="home" class="page active"><div class="hero"><h2>Ваше оборудование — в одном месте</h2><p>Профили устройств, полевой журнал и независимые измерения на телефоне.</p><button class="primary" data-go="gear">ОТКРЫТЬ ОБОРУДОВАНИЕ →</button></div><h3>СВОДКА</h3><div class="stats"><div><b id="gearCount">0</b><small>Профилей</small></div><div><b id="logCount">0</b><small>Записей</small></div><div><b id="pointCount">0</b><small>Измерений</small></div></div><p class="hint">Данные сохраняются на этом устройстве в браузере.</p></section>
+<section id="gear" class="page"><h2>Оборудование</h2><p class="muted">Создавайте карточки устройств и заметки.</p><div class="panel"><h3>НОВАЯ КАРТОЧКА</h3><select id="kind"><option>Винтовка</option><option>Оптика</option><option>Тепловизор</option><option>Дальномер</option><option>Другое</option></select><input id="gearName" placeholder="Название / модель"><textarea id="gearDetail" placeholder="Характеристики и заметки"></textarea><button class="primary" id="addGear">ДОБАВИТЬ</button></div><div id="gearList"></div></section>
+<section id="journal" class="page"><h2>Полевой журнал</h2><p class="muted">Заметки об обслуживании, настройках дисплея и наблюдениях.</p><div class="panel"><textarea id="note" placeholder="Новая запись..."></textarea><button class="primary" id="addNote">СОХРАНИТЬ ЗАПИСЬ</button></div><div id="journalList"></div></section>
+<section id="measure" class="page"><h2>Измерения и датчики</h2><p class="muted">Электронный уровень и журнал независимых измерений. Не предназначено для наведения или расчёта оружейных поправок.</p><div class="panel"><h3>ЭЛЕКТРОННЫЙ УРОВЕНЬ</h3><p id="sensorStatus" class="muted">Ожидание датчиков. На iPhone нажмите «Разрешить датчики».</p><button id="enableSensors" class="secondary">РАЗРЕШИТЬ ДАТЧИКИ</button><div class="gauge"><i class="cross-h"></i><i class="cross-v"></i><i id="bubble"></i></div><div class="readings"><div><small>Наклон вперёд/назад</small><b id="pitch">—</b></div><div><small>Наклон влево/вправо</small><b id="roll">—</b></div></div><p class="muted">Направление по компасу: <b id="heading">—</b></p><div class="chips"><button class="chip selected" data-unit="deg">DEG</button><button class="chip" data-unit="rad">RAD</button><button class="chip" data-unit="mil">MIL</button></div></div>
+<div class="panel"><h3>ЗАПИСАННЫЕ ИЗМЕРЕНИЯ</h3><p class="muted">Добавляйте пары «расстояние — измеренная величина». Это журнал наблюдений.</p><input id="pointDistance" inputmode="decimal" placeholder="Расстояние, м"><input id="pointValue" inputmode="decimal" placeholder="Измерение, см"><button id="addPoint" class="primary">ДОБАВИТЬ ТОЧКУ</button><div id="plot" class="plot"></div><button id="clearPoints" class="danger">ОЧИСТИТЬ ИЗМЕРЕНИЯ</button></div></section>
+</main><footer>BALLISTIC PRO · PWA VERSION 1.2<br>ANDROID / iOS</footer><script src="app.js"></script>
+</body></html>
